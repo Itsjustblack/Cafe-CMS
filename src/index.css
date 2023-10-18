@@ -1,10 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
-    font-family: 'Source Sans 3', sans-serif;
+body {
+	font-family: "Source Sans 3", sans-serif;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.3;
+	}
+}
+
+.pulse {
+	animation: pulse 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.loadable {
+	border-radius: 1.25rem;
+	overflow: hidden;
+	margin: 0 auto;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }

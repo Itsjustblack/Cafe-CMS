@@ -1,8 +1,8 @@
+import { AnimatePresence } from "framer-motion";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/Nav";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
-import { AnimatePresence } from "framer-motion";
 
 function App() {
 	return (
