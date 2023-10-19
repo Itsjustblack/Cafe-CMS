@@ -1,6 +1,7 @@
 import { Controller, useForm } from "react-hook-form";
 import Select from "react-select";
 import PageContainer from "../components/PageContainer";
+import useCartStore, { FoodMenu } from "../store/cart";
 
 const riceOptions = [
 	{ value: 500, label: "Fried Rice" },
@@ -31,9 +32,14 @@ const Shop = () => {
 		handleSubmit,
 		control,
 		formState: { isValid },
+		reset,
 	} = useForm();
 
-	const onSubmit = (data: unknown) => {
+	const { addToCart } = useCartStore();
+
+	const onSubmit = (data: FoodMenu) => {
+		addToCart(data);
+		reset();
 		console.log(data);
 	};
 

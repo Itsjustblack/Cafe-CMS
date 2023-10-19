@@ -1,7 +1,9 @@
+import useCartStore from "../../store/cart";
 import Logo from "../Logo";
 import NavItem from "./NavItem";
 
 const NavBar = () => {
+	const { totalItems } = useCartStore();
 	return (
 		<div className="w-full h-screen bg-white flex flex-col items-center pt-10 pb-10 px-2">
 			<Logo />
@@ -18,6 +20,7 @@ const NavBar = () => {
 					<NavItem
 						path="/"
 						image="cart.svg"
+						data={totalItems()}
 					/>
 				</div>
 				<div className="flex flex-col justify-self-end gap-y-10">
